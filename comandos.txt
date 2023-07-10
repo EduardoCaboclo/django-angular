@@ -1,0 +1,83 @@
+http://127.0.0.1:8000/admin/
+Eduardo
+Edu@1983
+
+http://localhost:8000/admin/core/member/
+eduardo
+Edu@1983
+
+http://127.0.0.1:8000/members/
+
+
+
+C:\Users\gohacking\Documents\members>.\members-backend\venv\Scripts\activate - pip install djangorestframework
+
+(venv) C:\Users\gohacking\Documents\members\members-backend>python manage.py runserver
+
+Starting development server at http://127.0.0.1:8000/
+
+
+
+C:\Users\gohacking\Documents\members\members-front>ng serve
+Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/
+
+
+C:\Users\gohacking\Documents\members\members-front>ng generate component members-detail
+
+
+ng generate service api 
+C:\Users\gohacking\Documents\members\members-front\src\app\members-detail>ng generate service api
+CREATE src/app/members-detail/api.service.spec.ts (342 bytes)
+CREATE src/app/members-detail/api.service.ts (132 bytes)
+
+
+C:\Users\gohacking\Documents\members>git init
+Initialized empty Git repository in C:/Users/gohacking/Documents/members/.git/
+
+
+
+
+
+  getMembers = () => {
+    this.api.getAllMembers().subscribe({
+      next: data => {
+        this.members = data;
+        },
+        error: error => {
+          console.log("Aconteceu um erro", error.message);
+          },
+          complete: () => {
+            console.log("A operação de busca foi concluída.");
+            }
+          }
+        );
+      };
+
+
+getMembers = () => {
+    this.api.getAllMembers().subscribe(
+      data => {
+        this.members = data
+      },
+      error => {console.log("Aconteceu um erro"); } );
+  };
+
+memberCkicked = (member) => {
+    this.api.getMember(member.id).subscribe(
+      data => {
+        console.log(data);
+      },
+      error => {console.log("Aconteceu um erro"); } );
+  };
+
+
+
+(venv) C:\Users\gohacking\Documents\members\members-backend>python manage.py shell
+from django.contrib.auth.models import User
+from rest_framework.authtoken.models import Token
+user = User.objects.get(id='1')
+token = Token.objects.create(user=user)
+print(token.key)
+
+
+
