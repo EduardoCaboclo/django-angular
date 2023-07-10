@@ -34,6 +34,10 @@ CREATE src/app/members-detail/api.service.ts (132 bytes)
 C:\Users\gohacking\Documents\members>git init
 Initialized empty Git repository in C:/Users/gohacking/Documents/members/.git/
 
+venv
+db.sqlite3
+members_profile
+__pycache__
 
 
 
