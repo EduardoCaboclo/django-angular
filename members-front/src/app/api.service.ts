@@ -23,6 +23,12 @@ export class ApiService {
     {headers: this.httpHeaders});
   };
 
+  saveNewMember(member: any) : Observable<any> {
+    return this.http.post(this.baseUrl + 'members/',member, 
+    {headers: this.httpHeaders});
+  };
+
+
 
 
 

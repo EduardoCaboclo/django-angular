@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from './api.service';
+import { Router } from '@angular/router';
 
 
 
@@ -11,16 +12,16 @@ import { ApiService } from './api.service';
 export class AppComponent {
   title = 'members-front';
 
-  selected_member = {id:0, name:'', surname:''};
+  selected_member = {id: 0, name: '', surname: '', phone:''};
 
   
   members = [
-    {name: 'Member 01', id: 1, surname: "Ciclano", photo: 'http://www.minhaapp.com/photo1'},
+    {name: 'Member 01', id: 1, surname: "Ciclano", phone: 'http://www.minhaapp.com/photo1'},
     {name: 'Member 02', id: 2, surname: "Beltrano", photo: 'http://www.minhaapp.com/photo2'},
     {name: 'Member 03', id: 3, surname: "Fulano", photo: 'http://www.minhaapp.com/photo2'},
   ];
   
-  constructor(private api:ApiService){
+  constructor(private api:ApiService, private router:Router){
     this.getMembers();
   }
 
@@ -42,19 +43,8 @@ export class AppComponent {
    };
 
    memberClicked = (member: any) => {
-    this.api.getMember(member.id).subscribe({
-      next: data => {
-        console.log(data);
-        this.selected_member = data;
-        },
-        error: error => {
-          console.log("Aconteceu um erro", error.message);
-          },
-          complete: () => {
-            console.log("A operação de busca foi concluída.");
-            }
-          }
-        );
+    this.router.navigate(['member-detail', member.id]);
+    
    };
 
 }

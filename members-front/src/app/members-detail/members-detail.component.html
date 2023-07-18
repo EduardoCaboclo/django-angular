@@ -1,2 +1,19 @@
-<h1> Member Detail Component</h1>
-Membro carregado: {{ selected_member.name }} - {{ selected_member.surname }}
+<h3> Member Detail Component</h3>
+<span>Você esta editando</span>: {{ selected_member.name }} - {{ selected_member.surname }} <br>
+
+<span class="image left">
+    <img src="{{ selected_member.photo }}" alt="Foto de {{ selected_member.name }}">
+</span> <br>
+
+<label for="">Id</label><br>
+<input type="text" [(ngModel)]="selected_member.id" readonly> <br>
+<label for="">Nome</label>
+<input type="text" [(ngModel)]="selected_member.name"><br>
+<label for="">Sobre Nome</label>
+<input type="text" [(ngModel)]="selected_member.surname"><br>
+<label for="">Telefone</label>
+<input type="text" [(ngModel)]="selected_member.phone"><br>
+<button (click)="update()" class="button">Update Member</button>
+<button (click)="delete()" class="button">Delete Member</button>
+
+<button (click)="newMember()" class="button primary">Novo</button>

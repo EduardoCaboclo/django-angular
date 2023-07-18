@@ -34,6 +34,13 @@ CREATE src/app/members-detail/api.service.ts (132 bytes)
 C:\Users\gohacking\Documents\members>git init
 Initialized empty Git repository in C:/Users/gohacking/Documents/members/.git/
 
+C:\Users\gohacking\Documents\members>git push origin main
+
+
+C:\Users\gohacking\Documents\members\members-front>ng generate component new-member
+
+
+
 venv
 db.sqlite3
 members_profile
@@ -85,3 +92,18 @@ print(token.key)
 
 
 
+   memberClicked = (member: any) => {
+    this.api.getMember(member.id).subscribe({
+      next: data => {
+        console.log(data);
+        this.selected_member = data;
+        },
+        error: error => {
+          console.log("Aconteceu um erro", error.message);
+          },
+          complete: () => {
+            console.log("A operação de busca foi concluída.");
+            }
+          }
+        );
+   };
