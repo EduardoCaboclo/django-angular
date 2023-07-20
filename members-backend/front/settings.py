@@ -144,6 +144,7 @@ CORS_ALLOWED_ORIGINS = [
     
     "http://localhost:8000",
     "http://localhost:4200",
+    "http://35.199.97.227:8000",
     
     
 ]
