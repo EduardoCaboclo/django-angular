@@ -140,12 +140,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-CORS_ALLOWED_ORIGINS = [
-    
+CORS_ORIGIN_WHITELIST = [
     "http://localhost:4200",
-    "http://35.199.97.227:8000",
-    
-    
+    "http://35.235.59.6"
 ]
 
 STATIC_URL = '/static/'
